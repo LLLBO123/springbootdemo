@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/springbootdata?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: wu7787879
+  redis:
+    host: 192.168.200.128  #redis\u4E3B\u673A\u5730\u5740
+    port: 6379  #\u7AEF\u53E3\u53F7
+    jedis:
+      pool:
+        max-active: 18  #\u8BBE\u7F6E\u8FDE\u63A5\u6C60\u7684\u6700\u5927\u8FDE\u63A5\u6570
+        max-wait: 3000  #\u8FDE\u63A5\u6C60\u6700\u5927\u963B\u585E\u7B49\u5F85\u65F6\u95F4
+        max-idle: 20   # \u8FDE\u63A5\u6C60\u4E2D\u6700\u5927\u7684\u7A7A\u95F2\u8FDE\u63A5\u6570
+        min-idle: 2    #\u8FDE\u63A5\u6C60\u4E2D\u6700\u5C0F\u7684\u7A7A\u95F2\u8FDE\u63A5\u6570
+
+    timeout: 3000  #\u8FDE\u63A5\u8D85\u65F6\u65F6\u95F4
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true  #\u5F00\u542F\u9A7C\u5CF0\u547D\u540D\u5339\u914D\u6620\u5C04
+  mapper-locations: classpath:mapper/*.xml  #\u5C31\u4F1A\u5C06resources/mapper\u6587\u4EF6\u5939\u4E0B\u6240\u6709\u7684mapper\u6587\u4EF6\u52A0\u8F7D
+  type-aliases-package: ccom.lagou.bootmybatis.pojo  #\u914D\u7F6Exml\u6620\u5C04\u6587\u4EF6\u4E2D\u5236\u5B9A\u7684\u5B9E\u4F53\u7C7B\u522B\u540D\u7684\u626B\u63CF\u8DEF\u5F84
